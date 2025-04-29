@@ -1,8 +1,14 @@
+import { AboutPreview } from "@/components/about-preview";
+
+
+
+
 
 export default function Home() {
   return (
-    <main className="flex justify-center items-center w-screen h-screen bg-secondary">
-      <h1 className="font-bold text-4xl">Santiago Getial Ayala</h1>
+    <main className="flex flex-col min-h-screen">
+      <AboutPreview/>
+
     </main>
 
   );
