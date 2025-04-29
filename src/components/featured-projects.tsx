@@ -2,7 +2,15 @@
 
 import Link from 'next/link';
 
-const featuredProjects = [
+type Project = {
+  id: number;
+  title: string;
+  description: string;
+  tags: string[];
+  videoSrc: string;
+};
+
+const featuredProjects: Project[] = [
   {
     id: 1,
     title: 'Backend Project',
@@ -26,7 +34,7 @@ const featuredProjects = [
   },
 ];
 
-function ProjectCard({ project }: { project: any }) {
+function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="bg-gray-900 rounded-lg overflow-hidden shadow-lg hover:shadow-purple-500/20 transition-shadow duration-300">
       <div className="aspect-video bg-black flex items-center justify-center text-gray-500 text-sm">
@@ -36,7 +44,7 @@ function ProjectCard({ project }: { project: any }) {
         <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
         <p className="text-gray-400 mb-3">{project.description}</p>
         <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag: string, i: number) => (
+          {project.tags.map((tag, i) => (
             <span key={i} className="text-xs bg-purple-600 text-white px-2 py-1 rounded-full">
               {tag}
             </span>
