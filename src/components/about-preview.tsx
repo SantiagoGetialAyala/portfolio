@@ -4,11 +4,26 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
+
+type Language = 'en' | 'es';
+
+interface Content {
+  [key: string]: {
+    title: string;
+    description1: string;
+    description2: string;
+    button: string;
+  };
+}
 
 export function AboutPreview() {
-  const [language, setLanguage] = useState<'en' | 'es'>('en');
+  const [language, setLanguage] = useState<Language>('en');
 
-  const content = {
+  const content: Content = {
     en: {
       title: 'About Me',
       description1:
@@ -29,7 +44,7 @@ export function AboutPreview() {
 
   return (
     <section className="relative w-full py-32 px-4 text-white bg-black overflow-hidden">
-      {/* Fondo con gradientes animados */}
+      {/* Fondo animado */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,40,200,0.15),transparent_70%)]" />
         <motion.div
@@ -45,18 +60,30 @@ export function AboutPreview() {
       </div>
 
       <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10">
-        {/* Video o Placeholder a la izquierda */}
+        {/* Video placeholder */}
         <div className="aspect-video bg-gray-900 rounded-lg overflow-hidden shadow-xl flex items-center justify-center">
           <span className="text-gray-400">[ Video Placeholder ]</span>
         </div>
 
-        {/* Texto a la derecha */}
+        {/* Texto con Swiper */}
         <div>
           <h2 className="text-4xl md:text-5xl font-bold mb-6">{content[language].title}</h2>
-          <p className="text-gray-300 mb-6 leading-relaxed">{content[language].description1}</p>
-          <p className="text-gray-300 mb-8 leading-relaxed">{content[language].description2}</p>
 
-          {/* Botón de idioma */}
+          <Swiper
+            pagination={{ clickable: true }}
+            modules={[Pagination]}
+            className="mb-8"
+            style={{ paddingBottom: '2rem' }}
+          >
+            <SwiperSlide>
+              <p className="text-gray-300 leading-relaxed">{content[language].description1}</p>
+            </SwiperSlide>
+            <SwiperSlide>
+              <p className="text-gray-300 leading-relaxed">{content[language].description2}</p>
+            </SwiperSlide>
+          </Swiper>
+
+          {/* Botones de idioma */}
           <div className="mb-6 flex gap-4">
             <button
               className={`px-4 py-2 rounded-md border ${
@@ -76,9 +103,8 @@ export function AboutPreview() {
             </button>
           </div>
 
-
           {/* Redes sociales */}
-          <div className="flex space-x-6 text-2xl mt-2 justify-start ">
+          <div className="flex space-x-6 text-2xl mt-2 justify-start">
             <Link href="https://github.com/santiigetial" target="_blank" className="hover:text-purple-400 transition-colors">
               <Github />
             </Link>
