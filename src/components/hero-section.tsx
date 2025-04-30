@@ -1,7 +1,8 @@
- 'use client';
+'use client';
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
 export default function HeroSection() {
   return (
@@ -36,13 +37,34 @@ export default function HeroSection() {
         </motion.h1>
 
         <motion.p
-          className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed"
+          className="text-lg md:text-xl text-gray-300 mb-4 leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
           full Stack Student Developer
         </motion.p>
+
+        {/* Redes Sociales */}
+        <motion.div
+          className="flex justify-center space-x-6 mb-10"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.3 }}
+        >
+          <Link href="https://github.com/santiigetial" target="_blank" className="hover:text-purple-400 transition-colors">
+            <Github size={28} />
+          </Link>
+          <Link href="https://linkedin.com/in/santiigetial" target="_blank" className="hover:text-purple-400 transition-colors">
+            <Linkedin size={28} />
+          </Link>
+          <Link href="https://twitter.com/santiigetial" target="_blank" className="hover:text-purple-400 transition-colors">
+            <Twitter size={28} />
+          </Link>
+          <Link href="mailto:santiigetial@example.com" className="hover:text-purple-400 transition-colors">
+            <Mail size={28} />
+          </Link>
+        </motion.div>
 
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center"
