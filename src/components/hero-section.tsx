@@ -1,0 +1,80 @@
+ 'use client';
+
+import Link from 'next/link';
+import { motion } from 'framer-motion';
+
+export default function HeroSection() {
+  return (
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black text-white">
+      {/* Background con gradientes y animaciones */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black z-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,40,200,0.15),transparent_70%)]" />
+        <motion.div
+          className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-purple-700/20 blur-3xl"
+          animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.3, 0.2] }}
+          transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
+        />
+        <motion.div
+          className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-indigo-700/20 blur-3xl"
+          animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.3, 0.2] }}
+          transition={{ duration: 6, repeat: Infinity, repeatType: "reverse", delay: 1 }}
+        />
+      </div>
+
+      {/* Contenido principal */}
+      <div className="container mx-auto px-4 z-10 text-center max-w-3xl">
+        <motion.h1
+          className="text-4xl md:text-6xl font-bold mb-6"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          Santiago Getial Ayala{' '}
+          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">
+            Problem Solver
+          </span>
+        </motion.h1>
+
+        <motion.p
+          className="text-lg md:text-xl text-gray-300 mb-10 leading-relaxed"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
+          full Stack Student Developer
+        </motion.p>
+
+        <motion.div
+          className="flex flex-col sm:flex-row gap-4 justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
+        >
+          <Link href="/projects" className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md text-lg transition-all">
+            View My Projects →
+          </Link>
+          <Link href="/contact" className="border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-md text-lg transition-all">
+            Contact Me
+          </Link>
+        </motion.div>
+      </div>
+
+      {/* Indicador de scroll */}
+      <motion.div
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 1 }}
+      >
+        <div className="flex flex-col items-center">
+          <p className="text-sm text-gray-400 mb-2">Scroll to explore</p>
+          <motion.div
+            className="w-1 h-10 rounded-full bg-white/20"
+            animate={{ y: [0, 10, 0], opacity: [0.5, 1, 0.5] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          />
+        </div>
+      </motion.div>
+    </section>
+  );
+}
