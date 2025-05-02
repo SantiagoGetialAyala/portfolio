@@ -93,10 +93,10 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
         >
-          <Link href="/projects" className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md text-lg transition-all">
+          <Link href="#featured-projects" className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md text-lg transition-all">
             View My Projects →
           </Link>
-          <Link href="/contact" className="border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-md text-lg transition-all">
+          <Link href="#Contact" className="border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-md text-lg transition-all">
             Contact Me
           </Link>
         </motion.div>
