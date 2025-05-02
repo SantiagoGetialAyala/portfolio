@@ -4,34 +4,54 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
 
+const name = 'Santiago Getial Ayala';
+
 export default function HeroSection() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black text-white">
-      {/* Background con gradientes y animaciones */}
+      {/* Fondo con gradientes y círculos animados */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,40,200,0.15),transparent_70%)]" />
         <motion.div
-          className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-purple-700/20 blur-3xl"
+          className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-gradient-to-tr from-indigo-600 to-blue-500 blur-3xl"
           animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.3, 0.2] }}
-          transition={{ duration: 8, repeat: Infinity, repeatType: "reverse" }}
+          transition={{ duration: 8, repeat: Infinity, repeatType: 'reverse' }}
         />
         <motion.div
-          className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-indigo-700/20 blur-3xl"
+          className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-700 blur-3xl"
           animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.3, 0.2] }}
-          transition={{ duration: 6, repeat: Infinity, repeatType: "reverse", delay: 1 }}
+          transition={{ duration: 6, repeat: Infinity, repeatType: 'reverse', delay: 1 }}
         />
       </div>
 
-      {/* Contenido principal */}
+      {/* Contenido del hero */}
       <div className="container mx-auto px-4 z-10 text-center max-w-3xl">
+        {/* Animación letra por letra */}
         <motion.h1
-          className="text-4xl md:text-6xl font-bold mb-6"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
+          className="text-4xl md:text-6xl font-bold mb-6 flex flex-wrap justify-center"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            visible: {
+              transition: {
+                staggerChildren: 0.05,
+              },
+            },
+          }}
         >
-          Santiago Getial Ayala{' '}
-          <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">
+          {name.split('').map((char, index) => (
+            <motion.span
+              key={index}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+              }}
+              className={char === ' ' ? 'mx-2' : ''}
+            >
+              {char}
+            </motion.span>
+          ))}
+          <span className="ml-3 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">
             Problem Solver
           </span>
         </motion.h1>
@@ -42,17 +62,17 @@ export default function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          full Stack Student Developer
+          Full Stack Student Developer
         </motion.p>
 
-        {/* Redes Sociales */}
+        {/* Redes sociales */}
         <motion.div
           className="flex justify-center space-x-6 mb-10"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          <Link href="https://github.com/santiigetial" target="_blank" className="hover:text-purple-400 transition-colors">
+          <Link href="https://github.com/SantiagoGetialAyala" target="_blank" className="hover:text-purple-400 transition-colors">
             <Github size={28} />
           </Link>
           <Link href="https://linkedin.com/in/santiigetial" target="_blank" className="hover:text-purple-400 transition-colors">
@@ -66,6 +86,7 @@ export default function HeroSection() {
           </Link>
         </motion.div>
 
+        {/* Botones */}
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center"
           initial={{ opacity: 0, y: 20 }}
@@ -93,7 +114,7 @@ export default function HeroSection() {
           <motion.div
             className="w-1 h-10 rounded-full bg-white/20"
             animate={{ y: [0, 10, 0], opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
           />
         </div>
       </motion.div>

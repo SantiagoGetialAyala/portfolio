@@ -144,7 +144,7 @@ export function FeaturedProjects() {
 
         <div className="text-center mt-12">
         <div className="flex space-x-6 text-2xl mt-2 justify-center">
-            <Link href="https://github.com/santiigetial" target="_blank" className="hover:text-purple-400 transition-colors">
+            <Link href="https://github.com/SantiagoGetialAyala" target="_blank" className="hover:text-purple-400 transition-colors">
               <Github />
             </Link>
             <Link href="https://linkedin.com/in/santiigetial" target="_blank" className="hover:text-purple-400 transition-colors">
