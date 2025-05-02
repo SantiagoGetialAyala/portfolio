@@ -28,7 +28,7 @@ export default function HeroSection() {
       <div className="container mx-auto px-4 z-10 text-center max-w-3xl">
         {/* Animación letra por letra */}
         <motion.h1
-          className="text-4xl md:text-6xl font-bold mb-6 flex flex-wrap justify-center"
+          className="text-3xl sm:text-4xl md:text-6xl font-bold mb-6 flex flex-wrap justify-center break-words text-center max-w-full"
           initial="hidden"
           animate="visible"
           variants={{
@@ -46,12 +46,12 @@ export default function HeroSection() {
                 hidden: { opacity: 0, y: 20 },
                 visible: { opacity: 1, y: 0 },
               }}
-              className={char === ' ' ? 'mx-2' : ''}
+              className={char === ' ' ? 'mx-1 sm:mx-2' : ''}
             >
               {char}
             </motion.span>
           ))}
-          <span className="ml-3 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">
+          <span className="ml-2 sm:ml-3 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">
             Problem Solver
           </span>
         </motion.h1>

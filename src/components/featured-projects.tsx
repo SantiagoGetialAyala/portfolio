@@ -1,9 +1,13 @@
-'use client'; // Esta línea asegura que el componente se ejecute en el cliente
+'use client';
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Github, Linkedin, Twitter, Mail } from 'lucide-react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 type Project = {
   id: number;
@@ -55,39 +59,8 @@ const featuredProjects: Project[] = [
   },
 ];
 
-type ProjectCardProps = {
-  project: Project;
-  lang: 'en' | 'es';
-};
-
-function ProjectCard({ project, lang }: ProjectCardProps) {
-  return (
-    <div className="bg-black rounded-lg overflow-hidden shadow-lg hover:shadow-purple-500/20 transition-shadow duration-300 min-w-[300px]">
-      <video
-        src={project.videoSrc[lang]}
-        className="aspect-video w-full object-cover"
-        controls
-      />
-      <div className="p-4">
-        <h3 className="text-xl font-semibold text-white mb-2">
-          {project.title[lang]}
-        </h3>
-        <p className="text-gray-300 mb-3">{project.description[lang]}</p>
-        <div className="flex flex-wrap gap-2">
-          {project.tags.map((tag, i) => (
-            <span key={i} className="text-xs bg-purple-600 text-white px-2 py-1 rounded-full">
-              {tag}
-            </span>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
 export function FeaturedProjects() {
   const [lang, setLang] = useState<'en' | 'es'>('en');
-  const scrollRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <section className="relative w-full py-32 px-4 text-white bg-black overflow-hidden">
@@ -132,18 +105,44 @@ export function FeaturedProjects() {
           </div>
         </div>
 
-        <div className="relative">
-          <div className="overflow-x-auto scrollbar-hide" ref={scrollRef}>
-            <div className="flex gap-8 pb-4 w-max">
-              {featuredProjects.map((project) => (
-                <ProjectCard key={project.id} project={project} lang={lang} />
-              ))}
-            </div>
-          </div>
-        </div>
+        {/* Swiper para los proyectos */}
+        <Swiper
+          pagination={{ clickable: true }}
+          modules={[Pagination]}
+          className="w-full"
+          style={{ paddingBottom: '2rem' }}
+        >
+          {featuredProjects.map((project) => (
+            <SwiperSlide key={project.id}>
+              <div className="flex justify-center px-4">
+                <div className="bg-black rounded-lg overflow-hidden shadow-lg hover:shadow-purple-500/20 transition-shadow duration-300 max-w-xl w-full">
+                  <video
+                    src={project.videoSrc[lang]}
+                    className="aspect-video w-full object-cover"
+                    controls
+                  />
+                  <div className="p-4">
+                    <h3 className="text-xl font-semibold text-white mb-2">
+                      {project.title[lang]}
+                    </h3>
+                    <p className="text-gray-300 mb-3">{project.description[lang]}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag, i) => (
+                        <span key={i} className="text-xs bg-purple-600 text-white px-2 py-1 rounded-full">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
 
+        {/* Redes sociales */}
         <div className="text-center mt-12">
-        <div className="flex space-x-6 text-2xl mt-2 justify-center">
+          <div className="flex space-x-6 text-2xl mt-2 justify-center">
             <Link href="https://github.com/SantiagoGetialAyala" target="_blank" className="hover:text-purple-400 transition-colors">
               <Github />
             </Link>

@@ -44,30 +44,43 @@ export function AboutPreview() {
 
   return (
     <section className="relative w-full py-32 px-4 text-white bg-black overflow-hidden">
-      {/* Fondo animado */}
+      {/* Fondo animado coherente */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,40,200,0.15),transparent_70%)]" />
         <motion.div
-          className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-purple-700/20 blur-3xl"
+          className="absolute -top-40 -right-40 w-96 h-96 rounded-full bg-gradient-to-tr from-indigo-600 to-blue-500 blur-3xl"
           animate={{ scale: [1, 1.2, 1], opacity: [0.2, 0.3, 0.2] }}
           transition={{ duration: 8, repeat: Infinity, repeatType: 'reverse' }}
         />
         <motion.div
-          className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-indigo-700/20 blur-3xl"
+          className="absolute -bottom-40 -left-40 w-96 h-96 rounded-full bg-gradient-to-tr from-purple-600 to-indigo-700 blur-3xl"
           animate={{ scale: [1, 1.1, 1], opacity: [0.2, 0.3, 0.2] }}
           transition={{ duration: 6, repeat: Infinity, repeatType: 'reverse', delay: 1 }}
         />
       </div>
 
       <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10">
-        {/* Video placeholder */}
-        <div className="aspect-video bg-gray-900 rounded-lg overflow-hidden shadow-xl flex items-center justify-center">
+        {/* Reemplaza este bloque por tu video */}
+        <motion.div
+          className="aspect-video bg-gray-900 rounded-lg overflow-hidden shadow-xl flex items-center justify-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+        >
+          {/* Puedes reemplazar esto por un <video> o <iframe> */}
           <span className="text-gray-400">[ Video Placeholder ]</span>
-        </div>
+        </motion.div>
 
-        {/* Texto con Swiper */}
+        {/* Contenido textual animado */}
         <div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">{content[language].title}</h2>
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold mb-6 text-white"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            {content[language].title}
+          </motion.h2>
 
           <Swiper
             pagination={{ clickable: true }}
@@ -104,8 +117,13 @@ export function AboutPreview() {
           </div>
 
           {/* Redes sociales */}
-          <div className="flex space-x-6 text-2xl mt-2 justify-start">
-            <Link href="https://github.com/santiigetial" target="_blank" className="hover:text-purple-400 transition-colors">
+          <motion.div
+            className="flex space-x-6 text-2xl mt-2 justify-start"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.3 }}
+          >
+            <Link href="https://github.com/SantiagoGetialAyala" target="_blank" className="hover:text-purple-400 transition-colors">
               <Github />
             </Link>
             <Link href="https://linkedin.com/in/santiigetial" target="_blank" className="hover:text-purple-400 transition-colors">
@@ -117,7 +135,7 @@ export function AboutPreview() {
             <Link href="mailto:santiigetial@example.com" className="hover:text-purple-400 transition-colors">
               <Mail />
             </Link>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
