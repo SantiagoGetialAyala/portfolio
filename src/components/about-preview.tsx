@@ -61,15 +61,10 @@ export function AboutPreview() {
 
       <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10">
         {/* Reemplaza este bloque por tu video */}
-        <motion.div
-          className="aspect-video bg-gray-900 rounded-lg overflow-hidden shadow-xl flex items-center justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          {/* Puedes reemplazar esto por un <video> o <iframe> */}
-          <span className="text-gray-400">[ Video Placeholder ]</span>
-        </motion.div>
+        <video src="/videos/VideoPresentacionHorizontal.mp4"
+          controls 
+          className='w-full h-full object-cover'>
+          </video>
 
         {/* Contenido textual animado */}
         <div>
