@@ -68,7 +68,7 @@ export function AboutPreview() {
           transition={{ duration: 0.6 }}
         >
           <video
-            src={language === 'es' ? '/public/videos/videoPresentacionHorizontalEn.mp4' : '/public/videos/videoPresentacionHorizontalEs.mp4'}
+            src={language === 'es' ? '/videos/videoPresentacionHorizontalEn.mp4' : '/videos/videoPresentacionHorizontalEs.mp4'}
             controls
             className="w-full h-full object-cover"
         />
