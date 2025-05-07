@@ -24,25 +24,25 @@ const testimonials: Testimonial[] = [
       en: 'Santiago was extremely helpful and delivered a solution better than expected. Highly recommended!',
       es: 'Santiago fue de gran ayuda y entregó una solución mejor de lo esperado. ¡Muy recomendado!',
     },
-    avatar: '/avatars/andrea.jpg',
+    avatar: '/avatars/Av3.avif',
   },
   {
     id: 2,
-    name: 'Carlos Martínez',
+    name: 'Luis Carlos Revelo',
     feedback: {
       en: 'Great professional. Communication was clear and the final result was amazing.',
       es: 'Gran profesional. La comunicación fue clara y el resultado final fue increíble.',
     },
-    avatar: '/avatars/carlos.jpg',
+    avatar: '/avatars/Av4.avif',
   },
   {
     id: 3,
-    name: 'Luisa Torres',
+    name: 'Jeronimo Unigarro',
     feedback: {
       en: 'Working with Santiago was a great experience. He’s talented and very committed.',
       es: 'Trabajar con Santiago fue una gran experiencia. Es talentoso y muy comprometido.',
     },
-    avatar: '/avatars/luisa.jpg',
+    avatar: '/avatars/Av5.avif',
   },
   {
     id: 4,
@@ -51,16 +51,16 @@ const testimonials: Testimonial[] = [
       en: 'He understood our needs perfectly and created something that exceeded expectations.',
       es: 'Entendio perfectamente el trabajo, un excelente ingeniero.',
     },
-    avatar: '/avatars/julian.jpg',
+    avatar: '/avatars/Av2.jpg',
   },
   {
     id: 5,
-    name: 'Nicki Gómez',
+    name: 'Samuel Gómez',
     feedback: {
       en: 'Very creative and detail-oriented. I’d definitely work with him again.',
       es: 'Muy creativo y detallista. Definitivamente volvería a trabajar con él.',
     },
-    avatar: '/avatars/maria.jpg',
+    avatar: '/avatars/Av1.avif',
   },
 ];
 

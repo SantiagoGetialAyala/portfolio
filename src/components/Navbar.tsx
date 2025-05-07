@@ -9,6 +9,7 @@ import { FiMenu, FiX } from 'react-icons/fi';
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '#featured-projects', label: 'Projects' },
+  { href: '#testimonials' , label: 'Testimonials'},
   { href: '#About-me', label: 'About Me' },
   { href: '#Contact', label: 'Contact' },
 ];
