@@ -43,7 +43,7 @@ export function AboutPreview() {
   };
 
   return (
-    <section id = "About-me" className="relative w-full py-32 px-4 text-white bg-black overflow-hidden">
+    <section id = "About-me" className="relative w-full py-32   px-4 text-white bg-black overflow-hidden">
       {/* Fondo animado coherente */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,40,200,0.15),transparent_70%)]" />
