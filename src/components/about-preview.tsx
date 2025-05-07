@@ -43,8 +43,8 @@ export function AboutPreview() {
   };
 
   return (
-    <section id = "About-me" className="relative w-full py-32   px-4 text-white bg-black overflow-hidden">
-      {/* Fondo animado coherente */}
+    <section id="About-me" className="relative w-full py-32 px-4 text-white bg-black overflow-hidden">
+      {/* Fondo animado */}
       <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(120,40,200,0.15),transparent_70%)]" />
         <motion.div
@@ -60,7 +60,7 @@ export function AboutPreview() {
       </div>
 
       <div className="relative max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center z-10">
-        {/* Reemplaza este bloque por tu video */}
+        {/* Video de presentación */}
         <motion.div
           className="aspect-video bg-gray-900 rounded-lg overflow-hidden shadow-xl"
           initial={{ opacity: 0, y: 20 }}
@@ -68,13 +68,13 @@ export function AboutPreview() {
           transition={{ duration: 0.6 }}
         >
           <video
-            src={language === 'es' ? '/videos/videoPresentacionHorizontalEn.mp4' : '/videos/videoPresentacionHorizontalEs.mp4'}
+            src={language === 'es' ? '/videos/videoPresentacionHorizontalEs.mp4' : '/videos/videoPresentacionHorizontalEn.mp4'}
             controls
             className="w-full h-full object-cover"
-        />
+          />
         </motion.div>
 
-        {/* Contenido textual animado */}
+        {/* Texto animado */}
         <div>
           <motion.h2
             className="text-4xl md:text-5xl font-bold mb-6 text-white"

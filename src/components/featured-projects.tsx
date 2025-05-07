@@ -27,8 +27,8 @@ const featuredProjects: Project[] = [
     },
     tags: ['Node.js', 'Express', 'MongoDB'],
     videoSrc: {
-      en: '/videos/backend-en.mp4',
-      es: '/videos/backend-es.mp4',
+      en: '/videos/Proyecto3.mp4',
+      es: '/videos/Proyecto2.mp4',
     },
   },
   {
@@ -40,8 +40,8 @@ const featuredProjects: Project[] = [
     },
     tags: ['React', 'Redux', 'Tailwind'],
     videoSrc: {
-      en: '/videos/frontend-en.mp4',
-      es: '/videos/frontend-es.mp4',
+      en: '/videos/Proyecto1.mp4',
+      es: '/videos/Proyecto2.mp4',
     },
   },
   {
