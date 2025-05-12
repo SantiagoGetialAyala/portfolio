@@ -51,13 +51,13 @@ export default function HeroSection() {
               {char}
             </motion.span>
           ))}
-          <span className="ml-2 sm:ml-3 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-indigo-500">
+          <span className="ml-2 sm:ml-3 text-transparent bg-clip-text bg-gradient-to-r from-[#8c4fd5] to-[#4f84ff]">
             Problem Solver
           </span>
         </motion.h1>
 
         <motion.p
-          className="text-lg md:text-xl text-gray-300 mb-4 leading-relaxed"
+          className="text-lg md:text-xl text-[#a3a3a3] mb-4 leading-relaxed"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
@@ -72,16 +72,16 @@ export default function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.3 }}
         >
-          <Link href="https://github.com/SantiagoGetialAyala" target="_blank" className="hover:text-purple-400 transition-colors">
+          <Link href="https://github.com/SantiagoGetialAyala" target="_blank" className="hover:text-[#8c4fd5] transition-colors">
             <Github size={28} />
           </Link>
-          <Link href="https://linkedin.com/in/santiigetial" target="_blank" className="hover:text-purple-400 transition-colors">
+          <Link href="https://linkedin.com/in/santiigetial" target="_blank" className="hover:text-[#8c4fd5] transition-colors">
             <Linkedin size={28} />
           </Link>
-          <Link href="https://twitter.com/santiigetial" target="_blank" className="hover:text-purple-400 transition-colors">
+          <Link href="https://twitter.com/santiigetial" target="_blank" className="hover:text-[#8c4fd5] transition-colors">
             <Twitter size={28} />
           </Link>
-          <Link href="mailto:santiigetial@example.com" className="hover:text-purple-400 transition-colors">
+          <Link href="mailto:santiigetial@example.com" className="hover:text-[#8c4fd5] transition-colors">
             <Mail size={28} />
           </Link>
         </motion.div>
@@ -93,7 +93,7 @@ export default function HeroSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
         >
-          <Link href="#featured-projects" className="bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-md text-lg transition-all">
+          <Link href="#featured-projects" className="bg-[#8c4fd5] hover:bg-[#742bbf] text-white px-6 py-3 rounded-md text-lg transition-all">
             View My Projects →
           </Link>
           <Link href="#Contact" className="border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-md text-lg transition-all">
@@ -110,7 +110,7 @@ export default function HeroSection() {
         transition={{ delay: 1, duration: 1 }}
       >
         <div className="flex flex-col items-center">
-          <p className="text-sm text-gray-400 mb-2">Scroll to explore</p>
+          <p className="text-sm text-[#a3a3a3] mb-2">Scroll to explore</p>
           <motion.div
             className="w-1 h-10 rounded-full bg-white/20"
             animate={{ y: [0, 10, 0], opacity: [0.5, 1, 0.5] }}
@@ -118,6 +118,9 @@ export default function HeroSection() {
           />
         </div>
       </motion.div>
+
+      {/* Desvanecimiento suave en la parte inferior */}
+      <div className="absolute bottom-0 left-0 w-full h-20 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" />
     </section>
   );
 }
