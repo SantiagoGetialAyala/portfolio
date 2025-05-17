@@ -27,8 +27,8 @@ const featuredProjects: Project[] = [
     },
     tags: ['Node.js', 'Express', 'MongoDB'],
     videoSrc: {
-      en: '/videos/Proyecto3.mp4',
-      es: '/videos/Proyecto2.mp4',
+      en: '/videos/Poject1En.mp4',
+      es: '/videos/Poject1Es.mp4',
     },
   },
   {
@@ -40,8 +40,8 @@ const featuredProjects: Project[] = [
     },
     tags: ['React', 'Redux', 'Tailwind'],
     videoSrc: {
-      en: '/videos/Proyecto1.mp4',
-      es: '/videos/Proyecto2.mp4',
+      en: '/videos/Poject2En.mp4',
+      es: '/videos/Poject2Es.mp4',
     },
   },
   {
@@ -53,8 +53,8 @@ const featuredProjects: Project[] = [
     },
     tags: ['Next.js', 'TypeScript', 'PostgreSQL'],
     videoSrc: {
-      en: '/videos/fullstack-en.mp4',
-      es: '/videos/fullstack-es.mp4',
+      en: '/videos/Poject3En.mp4',
+      es: '/videos/Poject3Es.mp4',
     },
   },
 ];
