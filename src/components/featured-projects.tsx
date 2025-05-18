@@ -14,6 +14,7 @@ type Project = {
   title: { en: string; es: string };
   description: { en: string; es: string };
   tags: string[];
+  videoSrc: { en: string; es: string };
 };
 
 const featuredProjects: Project[] = [
@@ -25,6 +26,10 @@ const featuredProjects: Project[] = [
       es: 'Una solución backend robusta con Node.js, Express y MongoDB.',
     },
     tags: ['Node.js', 'Express', 'MongoDB'],
+    videoSrc: {
+      en: 'https://www.youtube.com/embed/zgBoeLtL2uI',
+      es: 'https://www.youtube.com/embed/4qymafr76B4',
+    },
   },
   {
     id: 2,
@@ -34,6 +39,10 @@ const featuredProjects: Project[] = [
       es: 'Interfaz interactiva desarrollada con React y componentes modernos.',
     },
     tags: ['React', 'Redux', 'Tailwind'],
+    videoSrc: {
+      en: 'https://www.youtube.com/embed/v5kxM2ubJQc',
+      es: 'https://www.youtube.com/embed/4dmx-SCk7ls',
+    },
   },
   {
     id: 3,
@@ -43,6 +52,10 @@ const featuredProjects: Project[] = [
       es: 'Aplicación de extremo a extremo con integración de Next.js y PostgreSQL.',
     },
     tags: ['Next.js', 'TypeScript', 'PostgreSQL'],
+    videoSrc: {
+      en: 'https://www.youtube.com/embed/3dSI-1JI8tA',
+      es: 'https://www.youtube.com/embed/USfOSAks_aA',
+    },
   },
 ];
 
@@ -106,12 +119,12 @@ export function FeaturedProjects() {
                   <div className="aspect-video w-full">
                     <iframe
                       className="w-full h-full"
-                      src="https://www.youtube.com/embed/zgBoeLtL2uI"
-                      title="YouTube video player"
+                      src={project.videoSrc[lang]}
+                      title={project.title[lang]}
                       frameBorder="0"
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                       allowFullScreen
-                    />
+                    ></iframe>
                   </div>
                   <div className="p-4">
                     <h3 className="text-xl font-semibold text-white mb-2">

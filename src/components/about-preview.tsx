@@ -14,8 +14,7 @@ type Language = 'en' | 'es';
 interface Content {
   [key: string]: {
     title: string;
-    description1: string;
-    description2: string;
+    description: string;
     button: string;
   };
 }
@@ -25,21 +24,22 @@ export function AboutPreview() {
 
   const content: Content = {
     en: {
-      title: 'About Me',
-      description1:
-        "I'm Santiago Getial Ayala, a Software Engineering and Industrial Engineering student at the Universidad Cooperativa de Colombia. I'm 22 years old and currently working on projects that combine technology with process optimization.",
-      description2:
-        "On the left side of this portfolio, you'll find more detailed information about me and a presentation video where I share more about my background and experience.",
+      title: '✨ Get to Know Me',
+      description:
+        "Hi, I’m Brayan Santiago Getial, a Software and Industrial Engineering student. I have experience in backend and frontend development with technologies like Django, Flask, React, and SQL databases. I enjoy combining technical skills with business understanding to build complete solutions. I’m looking for opportunities to grow professionally, collaborate in teams, and keep learning. I also maintain healthy habits like sports and music to stay focused and creative.",
       button: 'Learn More About Me',
     },
     es: {
-      title: 'Sobre mí',
-      description1:
-        'Soy Santiago Getial Ayala, estudiante de Ingeniería de Software e Ingeniería Industrial en la Universidad Cooperativa de Colombia. Tengo 22 años y actualmente trabajo en proyectos que combinan tecnología con optimización de procesos.',
-      description2:
-        'En el lado izquierdo de este portafolio encontrarás más información sobre mí y un video de presentación donde comparto más sobre mi experiencia y formación.',
+      title: '✨ Conóceme Mejor',
+      description:
+        'Hola, soy Brayan Santiago Getial, estudiante de Ingeniería de Software e Industrial. Tengo experiencia en backend y frontend usando tecnologías como Django, Flask, React y bases de datos SQL. Me gusta integrar la parte técnica con la visión del negocio para crear soluciones completas. Busco oportunidades para crecer profesionalmente, trabajando en equipo y aprendiendo continuamente. Además, mantengo hábitos saludables como el deporte y la música para estar enfocado y creativo.',
       button: 'Conoce más sobre mí',
     },
+  };
+
+  const youtubeVideos = {
+    es: 'https://www.youtube.com/embed/uZPM-YUBnKI',
+    en: 'https://www.youtube.com/embed/yyXKNmGJrDY',
   };
 
   return (
@@ -67,22 +67,25 @@ export function AboutPreview() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <video
-            src={language === 'es' ? '/videos/PresentacionEs.mp4' : '/videos/PresentacionEn.mp4'}
-            controls
-            className="w-full h-full object-cover"
+          <iframe
+            src={youtubeVideos[language]}
+            title="Video de presentación"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            className="w-full h-full"
           />
         </motion.div>
 
         {/* Texto animado */}
         <div>
           <motion.h2
-            className="text-4xl md:text-5xl font-bold mb-6 text-white"
+            className="text-4xl md:text-5xl font-extrabold mb-6 bg-gradient-to-r from-purple-400 via-pink-500 to-indigo-400 bg-clip-text text-transparent relative inline-block"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
             {content[language].title}
+            <span className="block h-1 w-16 bg-indigo-500 mt-2 rounded-full animate-pulse" />
           </motion.h2>
 
           <Swiper
@@ -92,10 +95,7 @@ export function AboutPreview() {
             style={{ paddingBottom: '2rem' }}
           >
             <SwiperSlide>
-              <p className="text-gray-300 leading-relaxed">{content[language].description1}</p>
-            </SwiperSlide>
-            <SwiperSlide>
-              <p className="text-gray-300 leading-relaxed">{content[language].description2}</p>
+              <p className="text-gray-300 leading-relaxed">{content[language].description}</p>
             </SwiperSlide>
           </Swiper>
 
