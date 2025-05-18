@@ -14,7 +14,6 @@ type Project = {
   title: { en: string; es: string };
   description: { en: string; es: string };
   tags: string[];
-  videoSrc: { en: string; es: string };
 };
 
 const featuredProjects: Project[] = [
@@ -26,10 +25,6 @@ const featuredProjects: Project[] = [
       es: 'Una solución backend robusta con Node.js, Express y MongoDB.',
     },
     tags: ['Node.js', 'Express', 'MongoDB'],
-    videoSrc: {
-      en: '/videos/Poject1En.mp4',
-      es: '/videos/Poject1Es.mp4',
-    },
   },
   {
     id: 2,
@@ -39,10 +34,6 @@ const featuredProjects: Project[] = [
       es: 'Interfaz interactiva desarrollada con React y componentes modernos.',
     },
     tags: ['React', 'Redux', 'Tailwind'],
-    videoSrc: {
-      en: '/videos/Poject2En.mp4',
-      es: '/videos/Poject2Es.mp4',
-    },
   },
   {
     id: 3,
@@ -52,10 +43,6 @@ const featuredProjects: Project[] = [
       es: 'Aplicación de extremo a extremo con integración de Next.js y PostgreSQL.',
     },
     tags: ['Next.js', 'TypeScript', 'PostgreSQL'],
-    videoSrc: {
-      en: '/videos/Poject3En.mp4',
-      es: '/videos/Poject3Es.mp4',
-    },
   },
 ];
 
@@ -116,11 +103,16 @@ export function FeaturedProjects() {
             <SwiperSlide key={project.id}>
               <div className="flex justify-center px-4">
                 <div className="bg-black rounded-lg overflow-hidden shadow-lg hover:shadow-purple-500/20 transition-shadow duration-300 max-w-xl w-full">
-                  <video
-                    src={project.videoSrc[lang]}
-                    className="aspect-video w-full object-cover"
-                    controls
-                  />
+                  <div className="aspect-video w-full">
+                    <iframe
+                      className="w-full h-full"
+                      src="https://www.youtube.com/embed/zgBoeLtL2uI"
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
                   <div className="p-4">
                     <h3 className="text-xl font-semibold text-white mb-2">
                       {project.title[lang]}
