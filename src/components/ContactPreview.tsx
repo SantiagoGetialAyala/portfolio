@@ -136,13 +136,13 @@ export function ContactPreview() {
 
           <div className="text-center mt-12">
             <div className="flex space-x-6 text-2xl mt-2 justify-center">
-              <Link href="https://github.com/santiigetial" target="_blank" className="hover:text-purple-400 transition-colors">
+              <Link href="https://github.com/SantiagoGetialAyala" target="_blank" className="hover:text-purple-400 transition-colors">
                 <Github />
               </Link>
-              <Link href="https://linkedin.com/in/santiigetial" target="_blank" className="hover:text-purple-400 transition-colors">
+              <Link href="https://www.linkedin.com/in/santiago-genial-ayala-41454631b/" target="_blank" className="hover:text-purple-400 transition-colors">
                 <Linkedin />
               </Link>
-              <Link href="https://twitter.com/santiigetial" target="_blank" className="hover:text-purple-400 transition-colors">
+              <Link href="https://twitter.com/santiagogetiall" target="_blank" className="hover:text-purple-400 transition-colors">
                 <Twitter />
               </Link>
               <Link href="mailto:santiigetial@example.com" className="hover:text-purple-400 transition-colors">

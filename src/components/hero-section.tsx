@@ -1,9 +1,9 @@
 'use client';
 
+import { useEffect } from 'react';
 import Link from 'next/link';
 import { motion, useMotionValue, useTransform, animate } from 'framer-motion';
 import { Github, Linkedin, Twitter, Mail, ArrowRight } from 'lucide-react';
-import { useEffect } from 'react';
 
 const name = 'Santiago Getial Ayala';
 
@@ -24,9 +24,16 @@ export default function HeroSection() {
       x: Math.random() * 100,
       y: Math.random() * 100,
       duration: Math.random() * 10 + 5,
-      delay: Math.random() * 5
+      delay: Math.random() * 5,
     };
   });
+
+  const scrollToContact = () => {
+    const element = document.getElementById('Contact');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-black text-white">
@@ -75,9 +82,7 @@ export default function HeroSection() {
           animate="visible"
           variants={{
             visible: {
-              transition: {
-                staggerChildren: 0.05,
-              },
+              transition: { staggerChildren: 0.05 },
             },
           }}
         >
@@ -109,7 +114,8 @@ export default function HeroSection() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          Full Stack Student Developer <motion.span className="text-[#8c4fd5]">|</motion.span> Experience: <motion.span>{rounded}</motion.span>%
+          Full Stack Student Developer <motion.span className="text-[#8c4fd5]">|</motion.span> Experience:{' '}
+          <motion.span>{rounded}</motion.span>%
         </motion.p>
 
         <motion.div
@@ -119,10 +125,10 @@ export default function HeroSection() {
           transition={{ duration: 0.7, delay: 0.3 }}
         >
           {[
-            { icon: <Github size={28} />, href: "https://github.com/SantiagoGetialAyala" },
-            { icon: <Linkedin size={28} />, href: "https://linkedin.com/in/santiigetial" },
-            { icon: <Twitter size={28} />, href: "https://twitter.com/santiigetial" },
-            { icon: <Mail size={28} />, href: "mailto:santiigetial@example.com" }
+            { icon: <Github size={28} />, href: 'https://github.com/SantiagoGetialAyala' },
+            { icon: <Linkedin size={28} />, href: 'https://www.linkedin.com/in/santiago-genial-ayala-41454631b/' },
+            { icon: <Twitter size={28} />, href: 'https://twitter.com/santiagogetiall' },
+            { icon: <Mail size={28} />, href: '#', onClick: scrollToContact },
           ].map((social, index) => (
             <motion.div
               key={index}
@@ -130,13 +136,19 @@ export default function HeroSection() {
                 scale: 1.2,
                 y: -5,
                 rotate: [0, 5, -5, 0],
-                transition: { duration: 0.5 }
+                transition: { duration: 0.5 },
               }}
               whileTap={{ scale: 0.9 }}
             >
-              <Link href={social.href} target="_blank" className="hover:text-[#8c4fd5] transition-colors">
-                {social.icon}
-              </Link>
+              {social.onClick ? (
+                <button onClick={social.onClick} className="hover:text-[#8c4fd5] transition-colors">
+                  {social.icon}
+                </button>
+              ) : (
+                <Link href={social.href} target="_blank" className="hover:text-[#8c4fd5] transition-colors">
+                  {social.icon}
+                </Link>
+              )}
             </motion.div>
           ))}
         </motion.div>
@@ -164,8 +176,8 @@ export default function HeroSection() {
           </motion.div>
 
           <motion.div whileHover={{ scale: 1.05 }} className="w-full sm:w-auto">
-            <Link
-              href="#Contact"
+            <button
+              onClick={scrollToContact}
               className="relative overflow-hidden border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-md text-lg transition-all duration-300 w-full"
             >
               <span className="relative z-10">Contact Me</span>
@@ -175,7 +187,7 @@ export default function HeroSection() {
                 whileHover={{ scale: 1 }}
                 transition={{ duration: 0.5 }}
               />
-            </Link>
+            </button>
           </motion.div>
         </motion.div>
       </div>
@@ -189,7 +201,7 @@ export default function HeroSection() {
         onClick={() => window.scrollBy({ top: window.innerHeight - 100, behavior: 'smooth' })}
       >
         <div className="flex flex-col items-center">
-          <motion.p 
+          <motion.p
             className="text-sm text-[#a3a3a3] mb-2"
             animate={{ opacity: [0.6, 1, 0.6] }}
             transition={{ duration: 2, repeat: Infinity }}
@@ -198,18 +210,14 @@ export default function HeroSection() {
           </motion.p>
           <motion.div
             className="w-1 h-10 rounded-full bg-gradient-to-b from-[#8c4fd5] to-[#4f84ff]"
-            animate={{ 
-              y: [0, 10, 0],
-              opacity: [0.5, 1, 0.5],
-              height: [10, 20, 10]
-            }}
+            animate={{ y: [0, 10, 0], opacity: [0.5, 1, 0.5], height: [10, 20, 10] }}
             transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
           />
         </div>
       </motion.div>
 
       <div className="absolute bottom-0 left-0 w-full h-20 z-10 pointer-events-none overflow-hidden">
-        <motion.div 
+        <motion.div
           className="w-full h-full bg-gradient-to-t from-black to-transparent"
           animate={{ opacity: [0.8, 1, 0.8] }}
           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}

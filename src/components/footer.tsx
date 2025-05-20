@@ -41,8 +41,8 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
               <li><Link href="/" className="text-gray-400 hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="#featured-projects" className="text-gray-400 hover:text-white transition-colors">Projects</Link></li>
               <li><Link href="#About-me" className="text-gray-400 hover:text-white transition-colors">About Me</Link></li>
+              <li><Link href="#featured-projects" className="text-gray-400 hover:text-white transition-colors">Projects</Link></li>
               <li><Link href="#testimonials" className="text-gray-400 hover:text-white transition-colors">Testimonials</Link></li>
               <li><Link href="#Contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
@@ -53,7 +53,7 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Connect</h3>
             <div className="flex space-x-4">
               <Link href="https://github.com/SantiagoGetialAyala" target="_blank" className="hover:text-purple-400 transition-colors">GitHub</Link>
-              <Link href="https://linkedin.com/in/tu-usuario" target="_blank" className="hover:text-purple-400 transition-colors">LinkedIn</Link>
+              <Link href="https://www.linkedin.com/in/santiago-genial-ayala-41454631b/" target="_blank" className="hover:text-purple-400 transition-colors">LinkedIn</Link>
             </div>
           </div>
         </div>
