@@ -41,9 +41,10 @@ export function Footer() {
             <h3 className="text-lg font-semibold mb-4">Navigation</h3>
             <ul className="space-y-2">
               <li><Link href="/" className="text-gray-400 hover:text-white transition-colors">Home</Link></li>
-              <li><Link href="/projects" className="text-gray-400 hover:text-white transition-colors">Projects</Link></li>
-              <li><Link href="/about" className="text-gray-400 hover:text-white transition-colors">About Me</Link></li>
-              <li><Link href="/contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
+              <li><Link href="#featured-projects" className="text-gray-400 hover:text-white transition-colors">Projects</Link></li>
+              <li><Link href="#About-me" className="text-gray-400 hover:text-white transition-colors">About Me</Link></li>
+              <li><Link href="#testimonials" className="text-gray-400 hover:text-white transition-colors">Testimonials</Link></li>
+              <li><Link href="#Contact" className="text-gray-400 hover:text-white transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -60,13 +61,10 @@ export function Footer() {
         {/* Parte inferior */}
         <div className="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-500 text-sm">
-            © {currentYear} Portfolio. All rights reserved.
+            © {currentYear} Portfolio.
           </p>
 
-          <div className="mt-4 md:mt-0 flex space-x-6">
-            <Link href="/privacy" className="text-gray-500 hover:text-gray-400 text-sm">Privacy Policy</Link>
-            <Link href="/terms" className="text-gray-500 hover:text-gray-400 text-sm">Terms of Service</Link>
-          </div>
+         
         </div>
       </div>
     </footer>
