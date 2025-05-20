@@ -110,7 +110,7 @@ export function FeaturedProjects() {
           pagination={{ clickable: true }}
           modules={[Pagination]}
           className="w-full"
-          style={{ paddingBottom: '2rem' }}
+          style={{ paddingBottom: '3rem' }} // Asegura espacio para los bullets
         >
           {featuredProjects.map((project) => (
             <SwiperSlide key={project.id}>
@@ -144,6 +144,23 @@ export function FeaturedProjects() {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* Custom estilo para bullets */}
+        <style jsx global>{`
+          .swiper-pagination-bullet {
+            background: white;
+            opacity: 0.6;
+            width: 12px;
+            height: 12px;
+            margin: 0 6px !important;
+            transition: all 0.3s ease;
+          }
+          .swiper-pagination-bullet-active {
+            background: #a855f7;
+            opacity: 1;
+            transform: scale(1.2);
+          }
+        `}</style>
 
         {/* Redes sociales */}
         <div className="text-center mt-12">

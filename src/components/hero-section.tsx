@@ -142,15 +142,15 @@ export default function HeroSection() {
         </motion.div>
 
         <motion.div
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.4 }}
         >
-          <motion.div whileHover={{ scale: 1.05 }}>
+          <motion.div whileHover={{ scale: 1.05 }} className="w-full sm:w-auto">
             <Link
               href="#featured-projects"
-              className="group relative overflow-hidden bg-[#8c4fd5] hover:bg-[#742bbf] text-white px-6 py-3 rounded-md text-lg flex items-center justify-center gap-2 transition-all duration-300"
+              className="group relative overflow-hidden bg-[#8c4fd5] hover:bg-[#742bbf] text-white px-6 py-3 rounded-md text-lg flex items-center justify-center gap-2 transition-all duration-300 w-full"
             >
               <span className="relative z-10">View My Projects</span>
               <ArrowRight className="relative z-10" />
@@ -163,10 +163,10 @@ export default function HeroSection() {
             </Link>
           </motion.div>
 
-          <motion.div whileHover={{ scale: 1.05 }}>
+          <motion.div whileHover={{ scale: 1.05 }} className="w-full sm:w-auto">
             <Link
               href="#Contact"
-              className="relative overflow-hidden border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-md text-lg transition-all duration-300"
+              className="relative overflow-hidden border border-white/20 text-white hover:bg-white/10 px-6 py-3 rounded-md text-lg transition-all duration-300 w-full"
             >
               <span className="relative z-10">Contact Me</span>
               <motion.span
@@ -213,11 +213,6 @@ export default function HeroSection() {
           className="w-full h-full bg-gradient-to-t from-black to-transparent"
           animate={{ opacity: [0.8, 1, 0.8] }}
           transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        <motion.div 
-          className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#8c4fd5] to-[#4f84ff]"
-          animate={{ x: ['-100%', '100%'] }}
-          transition={{ duration: 6, repeat: Infinity, ease: 'linear' }}
         />
       </div>
     </section>
